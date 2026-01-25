@@ -1,10 +1,9 @@
 public class VariableNamesTheme {
     public static void main(String[] args) {
         // Блок 1. Разные переменные
-        System.out.println();
-        String codeBlock1 = "Разные переменные";
-        System.out.println(codeBlock1);
-        System.out.println();
+        System.out.println("""
+            Разные переменные
+                """);
         // Сумма чисел
         int digitSum = 5 + 5;
         System.out.println("Сумма чисел = " + digitSum);
@@ -14,8 +13,8 @@ public class VariableNamesTheme {
         System.out.println("Цифра = " + num);
 
         // Произведение цифр
-        int multNum = 4;
-        System.out.println("Произведение цифр 2 * 2 = " + multNum);
+        int numMult = 4;
+        System.out.println("Произведение цифр 2 * 2 = " + numMult);
 
         // Максимальное число
         int maxNum = 2147483647;
@@ -54,8 +53,8 @@ public class VariableNamesTheme {
         System.out.println("В числе 18 количество нулей = " + zeroAmount);
 
         // Уникальное число
-        int uniqueNumber = -17091999;
-        System.out.println("Уникальное число = " + uniqueNumber);
+        int uniqueNum = -17091999;
+        System.out.println("Уникальное число = " + uniqueNum);
 
         // Случайное число
         int randomNum = 4545101;
@@ -104,8 +103,8 @@ public class VariableNamesTheme {
         System.out.println("Размер: " + size + " мм");
 
         // Вместимость
-        int capasity = 1000;
-        System.out.println("Вместимость: " + capasity + " ТБ");
+        int capacity = 1000;
+        System.out.println("Вместимость: " + capacity + " ТБ");
 
         // Счетчик
         int counter = 25;
@@ -120,74 +119,57 @@ public class VariableNamesTheme {
         System.out.println("Количество чисел в этой строке = " + numAmountLine);
 
         // Блок 2. BOOLEAN-переменные
-        String codeBlock2 = "BOOLEAN-переменные";
-        System.out.println();
-        System.out.println(codeBlock2);
-        System.out.println();
+        System.out.println("""
 
+            BOOLEAN-переменные
+
+                """);
         // сотни равны?
-        boolean equalHundreds;
-        equalHundreds = true;
-        if (equalHundreds) {
-            System.out.println("да, сотни равны");
-        }
+        boolean hasEqualHundreds;
+        hasEqualHundreds = true;
+        System.out.println("да, сотни равны");
 
         // компьютер включен?
-        boolean isPcActive = true;
-        if (isPcActive) {
-            System.out.println("да, компьютер включен.");
-        }
+        boolean isPcOn = true;
+        System.out.println("да, компьютер включен.");
 
         // есть равные цифры?
-        boolean numbersEqual = false;
-        if (numbersEqual == false) {
-            System.out.println("нет, цифры не равны.");
-        }
+        boolean hasNumbersEqual = false;
+        System.out.println("нет, цифры не равны.");
 
         // служба создана?
-        boolean serviceCreated = true;
-        if (serviceCreated) {
-            System.out.println("служба создана.");
-        }
+        boolean isServiceCreated = true;
+        System.out.println("служба создана.");
 
         // файл пустой?
         boolean isFileEmpty = false;
-        if (isFileEmpty == false) {
-            System.out.println("Файл не пустой.");
-        }
+        System.out.println("Файл не пустой.");
 
         // соединение активное?
-        boolean isConnectActive = false;
-        if (isConnectActive == false) {
-            System.out.println("Соединение прервано");
-        }
+        boolean isConnectionActive = false;
+        System.out.println("Соединение прервано");
 
         // новый?
         boolean isNew = true;
-        if (isNew) {
-            System.out.println("Да, Новый");
-        }
+        System.out.println("Да, Новый");
 
         // электронная почта действительная?
-        boolean isMailAvailable = true;
-        if (isMailAvailable) {
-            System.out.println("Добро пожаловать на почту!");
-        }
+        boolean isMailValid = true;
+        System.out.println("Добро пожаловать на почту!");
 
         // имеются уникальные строки?
-        boolean hasUniqueStr = true;
-        if (hasUniqueStr) {
-            System.out.println("уникальные строки имеются");
-        }
+        boolean hasUniqueStrings = true;
+        System.out.println("уникальные строки имеются");
 
         // Блок 3. Аббревиатуры
         String codeBlock3 = "Аббревиатуры";
-        System.out.println();
-        System.out.println(codeBlock3);
-        System.out.println();
+        System.out.println("""
+
+                Аббревиатуры
+                    """);
 
         // старый universally unique identifier
-        String uuid = ("0001-0002-0003-0004-000000000005");
+        String oldUuid = ("0001-0002-0003-0004-000000000005");
         System.out.println(uuid + " = your UUID");
 
         // производитель оперативной памяти
@@ -203,7 +185,7 @@ public class VariableNamesTheme {
         System.out.println(httpDefinition + "расшифровывается как HyperText Transfer Protocol");
 
         // сокращенный uniform resource locator
-        String urlDefinition = ("url");
+        String abbreviatedUrlDefinition = ("url");
         System.out.println(urlDefinition + " is unique web address for a specific resource");
 
         // новый идентификатор клиента
@@ -211,7 +193,7 @@ public class VariableNamesTheme {
         System.out.println("новый никнейм: " + newId);
 
         // количество символов в american standard code for information interchange
-        int asciiNumAmount = 128;
+        int asciiCharsCount = 128;
         System.out.println("в ASCII " + 128 + " символов");
     }
 }
