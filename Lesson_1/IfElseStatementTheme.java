@@ -3,34 +3,31 @@ import java.math.RoundingMode;
 
 public class IfElseStatementTheme {
     public static void main(String[] args) {
-        System.out.println("""
-
-        1.ПЕРЕВОД ПСЕВДОКОДА НА ЯЗЫК JAVA
-
-                """);
+        System.out.println("1.ПЕРЕВОД ПСЕВДОКОДА НА ЯЗЫК JAVA");
         boolean isMale = true;
+        
         if (!isMale) {
             System.out.println("Вы девушка.");
         } else {
             System.out.println("Вы мужчина.");
         }
+
         int age = 25;
         if (age > 18) {
             System.out.println("Вы старше 18");
         } else {
             System.out.println("Вы младше 18");
         }
+        
         double height = 1.9;
         if (height < 1.8) {
             System.out.println("Ваш рост выше 1.8 м");
         } else {
             System.out.println("Ваш рост ниже 1.8 м");
         }
-        System.out.println("""
 
-        2.ПОИСК БОЛЬШЕГО ЧИСЛА ШАГОВ
+        System.out.println("2.ПОИСК БОЛЬШЕГО ЧИСЛА ШАГОВ");
 
-                 """);
         int todayTakenSteps = 2;
         int yesterdayTakenSteps = 21;
 
@@ -42,11 +39,7 @@ public class IfElseStatementTheme {
             System.out.println("Сегодня вы прошли столько же шагов как и вчера");
         }
 
-        System.out.println("""
-
-        3.ПРОВЕРКА КОЛИЧЕСТВА ГОСТЕЙ
-
-                    """);
+        System.out.println("3.ПРОВЕРКА КОЛИЧЕСТВА ГОСТЕЙ");
         int guestAmount = -6;
         if (guestAmount == 0) { 
             System.out.println("Пока никто не записался на мероприятие!");
@@ -57,12 +50,10 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("нечетное число гостей");
         }
-        System.out.println("""
+        System.out.println(" 4.ОПРЕДЕЛЕНИЕ ПЕРВОГО СИМВОЛА НИКНЕЙМА");
 
-        4.ОПРЕДЕЛЕНИЕ ПЕРВОГО СИМВОЛА НИКНЕЙМА
-
-первый вариант решения задачи:
-                    """);
+        System.out.println("первый вариант решения задачи:");
+ 
         String nickName = ("*ke4inaTori*");
         char firstChar = nickName.charAt(0);
         if (firstChar >= 'a' && firstChar <= 'z') {
@@ -75,10 +66,7 @@ public class IfElseStatementTheme {
             System.out.println("никнейм " + nickName + " начинается с символа " + firstChar);
         }
 
-        System.out.println("""
-
-    второй вариант решения задачи
-                    """);
+        System.out.println("второй вариант решения задачи");
 
         String nickName2 = ("*ke4inaTori*");
         char firstChar2 = nickName.charAt(0);
@@ -92,11 +80,7 @@ public class IfElseStatementTheme {
             System.out.println("никнейм " + nickName2 + " начинается с символа " + firstChar2);
         }
 
-        System.out.println("""
-
-       5.Инвентаризация
-
-                    """);
+        System.out.println("5.ИНВЕНТАРИЗАЦИЯ");
         int dataBaseSerialNumber = 431;
         int firstNum = (dataBaseSerialNumber / 10) % 10;
         int secondNum = dataBaseSerialNumber / 100;
@@ -114,18 +98,11 @@ public class IfElseStatementTheme {
             String temp1 = (firstNum == firstNum2) ? String.valueOf(firstNum) : "_";
             String temp2 = (secondNum == secondNum2) ? String.valueOf(secondNum) : "_";
             String temp3 = (thirdNum == thirdNum2) ? String.valueOf(thirdNum) : "_";
-            System.out.println("""
-                неполное совпадение: %s %s %s
-
-                            """.formatted(temp1, temp2, temp3));
+            System.out.println("неполное совпадение: %s %s %s".formatted(temp1, temp2, temp3));
         }
 
-        System.out.println("""
-
-       6.ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %
-
-Первый способ:
-                    """);
+        System.out.println("6.ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %");
+        System.out.println("Вариант 1"); 
         float deposit = 321123.79f;
         float percentPlus = 0;
         float sumPercents = 0;
@@ -139,23 +116,21 @@ public class IfElseStatementTheme {
         sumPercents = (deposit + percentPlus);
         System.out.println("""
 
-Начальный депозит: %f
-сумма начисленного процента: %f
-итоговая сумма: %f
+                Начальный депозит: %f
+                сумма начисленного процента: %f
+                итоговая сумма: %f
 
-                    """.formatted(deposit, percentPlus, sumPercents));
+                        """.formatted(deposit, percentPlus, sumPercents));
 
-        System.out.println("второй способ");
+        System.out.println("Вариант 2");
 
         BigDecimal depositBd = new BigDecimal("321123.79");
         BigDecimal percentPlusBd;
         BigDecimal sumPercentsBd;
 
-        // Константы для условий
         BigDecimal limit100k = new BigDecimal("100000");
         BigDecimal limit300k = new BigDecimal("300000");
 
-        // Логика выбора процента
         if (depositBd.compareTo(limit100k) < 0) {
             percentPlusBd = depositBd.multiply(new BigDecimal("0.05"));
         } else if (depositBd.compareTo(limit300k) <= 0) {
@@ -164,24 +139,17 @@ public class IfElseStatementTheme {
             percentPlusBd = depositBd.multiply(new BigDecimal("0.10"));
         }
 
-        // Округляем начисленный процент до 2 знаков (HALF_UP - обычное математическое округление)
         percentPlusBd = percentPlusBd.setScale(2, RoundingMode.HALF_UP);
-        
-        // Считаем итоговую сумму
+
         sumPercentsBd = depositBd.add(percentPlusBd);
 
-        // Вывод (используем %s для BigDecimal внутри текстового блока)
         System.out.println("""
-            Начальный депозит: %s
-            Сумма начисленного процента: %s
-            Итоговая сумма: %s
-                    """.formatted(depositBd, percentPlusBd, sumPercentsBd));
+                Начальный депозит: %s
+                Сумма начисленного процента: %s
+                Итоговая сумма: %s
+                        """.formatted(depositBd, percentPlusBd, sumPercentsBd));
 
-        System.out.println("""
-
-       7.ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ
-
-                    """);
+        System.out.println("7.ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ");
 
         int historyMarkPercent = 59;
         String printHistoryMark = "";
@@ -203,6 +171,7 @@ public class IfElseStatementTheme {
         int programmingMarkPercent = 92;
         int programmingMark = 0;
         String printProgrammingMark = "";
+
         if (programmingMarkPercent <= 60) {
             printProgrammingMark = ("программирование: оценка - 2");
             programmingMark = 2;
@@ -216,21 +185,18 @@ public class IfElseStatementTheme {
             printProgrammingMark = ("программирование: оценка - 5");
             programmingMark = 5;
         }
+
         double middleNumMark = (historyMark + programmingMark) / 2.0;
         double middlePercentMark = (programmingMarkPercent + historyMarkPercent) / 2.0;
         System.out.println("""
-%s
-%s
-Средняя оценка: %f
-Средний процент: %f
+                %s
+                %s
+                Средняя оценка: %f
+                Средний процент: %f
+                        """.formatted(printHistoryMark, printProgrammingMark,
+                            middleNumMark, middlePercentMark));
 
-                    """.formatted(printHistoryMark, printProgrammingMark, middleNumMark, middlePercentMark));
-
-        System.out.println("""
-
-       8.РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ
-
-                    """);
+        System.out.println("8.РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ");
         BigDecimal salesPerMonth = new BigDecimal(13025.233);
         BigDecimal rentPayment = new BigDecimal(5123.018);
         BigDecimal manufactureSelfCost = new BigDecimal(9001.729);
@@ -240,10 +206,6 @@ public class IfElseStatementTheme {
                 .multiply(new BigDecimal(12));
         profitPerYear = profitPerYear.setScale(2, RoundingMode.HALF_UP);
         char plusMinusSign = (profitPerYear.compareTo(BigDecimal.ZERO) >= 0) ? '+' : '-';
-        System.out.println("""
-
-        прибыль за год: %s
-
-                """.formatted(profitPerYear));
+        System.out.println(" прибыль за год: %s".formatted(profitPerYear));
     }
 }

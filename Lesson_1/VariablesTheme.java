@@ -5,110 +5,86 @@ import java.time.format.DateTimeFormatter;
 
 public class VariablesTheme {
     public static void main(String[] args) {
-        System.out.println("""
-
-                    1 ВЫВОД ASCII-ГРАФИКИ
-                    """);
+        System.out.println(" 1 ВЫВОД ASCII-ГРАФИКИ");
 
         System.out.println(String.join("\n",
-                "                      /\\\\",
-                "    J    a  v     v  /  \\\\",
-                "    J   a a  v   v  /_( )\\\\",
-                " J  J  aaaaa  V V  /      \\\\",
-                "  JJ  a     a  V  /___/\\___\\\\"
+            "                      /\\",
+            "    J    a  v     v  /  \\",
+            "    J   a a  v   v  /_( )\\",
+            " J  J  aaaaa  V V  /      \\",
+            "  JJ  a     a  V  /___/\\___\\"
         ));
 
-        System.out.print("""
-                      /\\             
-                J    /  \\  v     v  a
-                J   /_( )\\  v   v  a a
-             J  J  /      \\  V V  aaaaa
-              JJ  /___/\\___\\  V  a     a
-                """);
         System.out.println("""
-
-                    2. расчет стоимости товара
-                """);
+                                      /\\             
+                                J    /  \\  v     v  a
+                                J   /_( )\\  v   v  a a
+                             J  J  /      \\  V V  aaaaa
+                              JJ  /___/\\___\\  V  a     a 
+                                """);
+        System.out.println("2. РАСЧЕТ СТОИМОСТИ ТОВАРА ");
 
         float penPrice = 105.50f;
         float bookPrice = 235.23f;
         float discountPercent = 0.11f;
         float dicountRemainder = 0.89f;
-        float totalPrice = penPrice + bookPrice;
-        float discountValue = (penPrice + bookPrice) * discountPercent;
-        float discountPrice = (penPrice + bookPrice) * dicountRemainder;
+        float basePrice = penPrice + bookPrice;
+        float discountSum = basePrice * discountPercent;
+        float discountPrice = basePrice * dicountRemainder;
 
-        System.out.print("стоимость товаров без скидки: " + totalPrice + 
-                "\nсумма скидки: " + discountValue + 
+        System.out.println("стоимость товаров без скидки: " + basePrice + 
+                "\nсумма скидки: " + discountSum + 
                 "\nстоимость товаров со скидкой: " + discountPrice);
 
-        System.out.println("""
-
-Вариант решения №2
-                """);
+        System.out.println(" ВАРИАНТ РЕШЕНИЯ ДВА №2");
 
         BigDecimal penPriceBd = new BigDecimal("105.50");
         BigDecimal bookPriceBd = new BigDecimal("235.23");
         BigDecimal discountPercentBd = BigDecimal.valueOf(0.11);
-        BigDecimal totalPriceBd = penPriceBd.add(bookPriceBd)
+        BigDecimal basePriceBd = penPriceBd.add(bookPriceBd)
                         .setScale(2, RoundingMode.HALF_UP);
-        BigDecimal discountValueBd = totalPriceBd.multiply(discountPercentBd)
+        BigDecimal discountSumBd = basePriceBd.multiply(discountPercentBd)
                 .setScale(2, RoundingMode.HALF_UP);
-        BigDecimal discountPriceBd = totalPriceBd.subtract(discountValueBd)
+        BigDecimal discountPriceBd = basePriceBd.subtract(discountSumBd)
                         .setScale(2, RoundingMode.HALF_UP);
-        System.out.println("Общая сумма: " + totalPriceBd);
-        System.out.println("Скидка: " + discountValueBd);
-        System.out.println("Цена со скидкой: " + discountPriceBd);
+        System.out.println("стоимость товаров без скидки: " + basePriceBd + 
+                "\nсумма скидки: " + discountSumBd + 
+                "\nстоимость товаров со скидкой: " + discountPriceBd);
 
-        System.out.println("""
 
-                    3. перестановка значений ячеек в таблице
-
-1 способ - третья переменная:
-                """);
+        System.out.println("3. ПЕРЕСТАНОВКА ЗНАЧЕНИЙ ЯЧЕЕК В ТАБЛИЦЕ");
         int num1 = 2;
         int num2 = 5;
-        int num3 = num1;
+        System.out.println(" 1 СПОСОБ ТРЕТЬЯ ПЕРЕМЕННАЯ:");
+        int swap = num1;
         num1 = num2;
-        num2 = num3;
+        num2 = swap;
         System.out.println("Новые значения: num1 = " + num1 + ", num2 = " + num2);
-        System.out.println("""
-
-2. способ через арифметику (сумма и вычитание):
-                """);
+        System.out.println(" 2. СПОСОБ ЧЕРЕЗ АРИФМЕТИКУ (СУММА И ВЫЧИТАНИЕ):");
         num1 += num2;
         num2 = num1 - num2; 
         num1 -= num2;
         System.out.println("Новые значения: num1 = " + num1 + ", num2 = " + num2);
-        System.out.println("""
-
-3. способ побитовая операция
-                """);
+        System.out.println(" 3. СПОСОБ ПОБИТОВАЯ ОПЕРАЦИЯ");
         num1 ^= num2;
         num2 ^= num1;
         num1 ^= num2;
         System.out.println("Новые значения: num1 = " + num1 + ", num2 = " + num2);
 
-        System.out.println("""
+        System.out.println("4. ДЕКОДИРОВАНИЕ СООБЩЕНИЯ");
 
-                    4. ДЕКОДИРОВАНИЕ СООБЩЕНИЯ
-                """);
+        int code1 = 1055;
+        int code2 = 1088;
+        int code3 = 1080;
+        int code4 = 1074;
+        int code5 = 1077;
+        int code6 = 1090;
+        System.out.printf("%-2d%-2d%-2d%-2d%-2d%-2d%n",
+                code1, code2, code3, code4, code5, code6);
+        System.out.printf("%-2C%-2c%-2c%-2c%-2c%-2c%n",
+                code1, code2, code3, code4, code5, code6);
 
-        int codePart1 = 1055;
-        int codePart2 = 1088;
-        int codePart3 = 1080;
-        int codePart4 = 1074;
-        int codePart5 = 1077;
-        int codePart6 = 1090;
-        System.out.printf("%-10d%-10d%-10d%-10d%-10d%-10d%n",
-                codePart1, codePart2, codePart3, codePart4, codePart5, codePart6);
-        System.out.printf("%-10C%-10c%-10c%-10c%-10c%-10c%n",
-                codePart1, codePart2, codePart3, codePart4, codePart5, codePart6);
-
-        System.out.println("""
-
-                    5. АНАЛИЗ КОДА ТОВАРА
-                """);
+        System.out.println("5. АНАЛИЗ КОДА ТОВАРА");
 
         int uniqueThreeDigitCode = 123;
         int goodCategory = uniqueThreeDigitCode / 100;
@@ -123,10 +99,7 @@ public class VariablesTheme {
         System.out.println("Контрольная сумма: " + checkSum);
         System.out.println("Проверочный код: " + verificationCode);
 
-        System.out.println("""
-
-                    6. Датчики ракеты
-                """);
+        System.out.println("6. ДАТЧИКИ РАКЕТЫ ");
 
         int traveledDistance = Integer.MAX_VALUE;
         String traveledDistanceOutput = """
@@ -147,33 +120,31 @@ public class VariablesTheme {
 
         short pressure = Short.MAX_VALUE;
         String pressureOutput = """
-        давление: %d b
-        +1: %d b
-        -1: %d b
-                """.formatted(pressure, (short) (pressure + 1), (short) (pressure + 1 - 1));
+                        давление: %d b
+                        +1: %d b
+                        -1: %d b
+                        """.formatted(pressure, (short) (pressure + 1), (short) (pressure + 1 - 1));
         System.out.println(pressureOutput);
 
         long timeFromStart = Long.MAX_VALUE;
         String timeFromStartOutput = """
-        Время с отправления: %d мс
-        +1: %d мс
-        -1: %d мс
-                    """.formatted(timeFromStart, (long) (timeFromStart + 1), (long) (timeFromStart + 1 - 1));
+                        Время с отправления: %d мс
+                        +1: %d мс
+                        -1: %d мс
+                        """.formatted(timeFromStart, (long) (timeFromStart + 1), (long) (timeFromStart + 1 - 1));
         System.out.println(timeFromStartOutput);
 
         char modeCode = Character.MAX_VALUE;
         String modeCodeOutput = """
-        Код состояния: %d 
-        +1: %d 
-        -1: %d 
-                    """.formatted((int) modeCode, (int) (char) (modeCode + 1),
+                        Код состояния: %d 
+                        +1: %d 
+                        -1: %d 
+                        """.formatted((int) modeCode, (int) (char) (modeCode + 1),
                         (int) (char) (modeCode + 1 - 1)); // check
         System.out.println(modeCodeOutput);
 
-        System.out.println("""
+        System.out.println("7. ВЫВОД ПАРАМЕТРОВ JVM И ОС ");
 
-                    7. ВЫВОД ПАРАМЕТРОВ JVM И ОС
-                """);
         Runtime runtime = Runtime.getRuntime();
         double allocatedMemory = runtime.totalMemory() / (1024.0 * 1024.0);
         double freeMemory = runtime.freeMemory() / (1024.0 * 1024.0);
@@ -183,12 +154,12 @@ public class VariablesTheme {
 
         System.out.println("""
 
-        выделенная память - %.1f (МБ)
-        свободная память - %.1f (МБ)
-        используемая память - %.1f  (Мб)
-        максимально доступная для выделения память - %.1f  (Мб) 
-        доступное число ядер - %d 
-                """.formatted(allocatedMemory, freeMemory, usedMemory, maxAllocatedMemory, cores));
+                        выделенная память - %.1f (МБ)
+                        свободная память - %.1f (МБ)
+                        используемая память - %.1f  (Мб)
+                        максимально доступная для выделения память - %.1f  (Мб) 
+                        доступное число ядер - %d 
+                        """.formatted(allocatedMemory, freeMemory, usedMemory, maxAllocatedMemory, cores));
 
         String drive = System.getProperty("user.dir").substring(0, 2);
         String osVer = System.getProperty("os.version");
@@ -196,18 +167,15 @@ public class VariablesTheme {
         String separator = System.getProperty("file.separator");
 
         System.out.println("""
-        ПАРАМЕТРЫ ОС:
-        Системный диск: %s
-        Версия ОС: %s
-        Версия Java: %s
-        Разделитель пути: %s
-                """.formatted(drive, osVer, javaVer, separator));
+                        ПАРАМЕТРЫ ОС:
+                        Системный диск: %s
+                        Версия ОС: %s
+                        Версия Java: %s
+                        Разделитель пути: %s
+                        """.formatted(drive, osVer, javaVer, separator));
 
-        System.out.println("""
+        System.out.println("8. ЗАМЕР ВРЕМЕНИ РАБОТЫ КОДА");
 
-                    8. ЗАМЕР ВРЕМЕНИ РАБОТЫ КОДА
-
-                """);
         long startNano = System.nanoTime();
         LocalTime startTime = LocalTime.now();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
@@ -215,12 +183,12 @@ public class VariablesTheme {
         LocalTime finishTime = LocalTime.now();
         double timeElapsed = (finishNano - startNano) / 1_000_000_000.0;
         String table = """
-        | Старт проверки | %s |         |
-        +----------------+--------------+
-        | Финиш проверки | %s |         |
-        +----------------+--------------+
-        | Время работы | %.3f сек |     |
-                """.formatted(dtf.format(startTime), dtf.format(finishTime), timeElapsed);
+                        | Старт проверки | %s |         |
+                        +----------------+--------------+
+                        | Финиш проверки | %s |         |
+                        +----------------+--------------+
+                        | Время работы | %.3f сек |     |
+                        """.formatted(dtf.format(startTime), dtf.format(finishTime), timeElapsed);
         System.out.println(table);
     }
 }

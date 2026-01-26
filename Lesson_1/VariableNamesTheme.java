@@ -1,9 +1,7 @@
 public class VariableNamesTheme {
     public static void main(String[] args) {
         // Блок 1. Разные переменные
-        System.out.println("""
-            Разные переменные
-                """);
+        System.out.println("РАЗНЫЕ ПЕРЕМЕННЫЕ");
         // Сумма чисел
         int digitSum = 5 + 5;
         System.out.println("Сумма чисел = " + digitSum);
@@ -119,14 +117,9 @@ public class VariableNamesTheme {
         System.out.println("Количество чисел в этой строке = " + numAmountLine);
 
         // Блок 2. BOOLEAN-переменные
-        System.out.println("""
-
-            BOOLEAN-переменные
-
-                """);
+        System.out.println("BOOLEAN-ПЕРЕМЕННЫЕ");
         // сотни равны?
-        boolean hasEqualHundreds;
-        hasEqualHundreds = true;
+        boolean hasEqualHundreds = true;
         System.out.println("да, сотни равны");
 
         // компьютер включен?
@@ -134,19 +127,19 @@ public class VariableNamesTheme {
         System.out.println("да, компьютер включен.");
 
         // есть равные цифры?
-        boolean hasNumbersEqual = false;
+        boolean hasEqualNumbers = false;
         System.out.println("нет, цифры не равны.");
 
         // служба создана?
-        boolean isServiceCreated = true;
+        boolean isCreatedService = true;
         System.out.println("служба создана.");
 
         // файл пустой?
-        boolean isFileEmpty = false;
+        boolean isEmpty = false;
         System.out.println("Файл не пустой.");
 
         // соединение активное?
-        boolean isConnectionActive = false;
+        boolean isActiveConnection = false;
         System.out.println("Соединение прервано");
 
         // новый?
@@ -154,7 +147,7 @@ public class VariableNamesTheme {
         System.out.println("Да, Новый");
 
         // электронная почта действительная?
-        boolean isMailValid = true;
+        boolean isValidMail = true;
         System.out.println("Добро пожаловать на почту!");
 
         // имеются уникальные строки?
@@ -162,15 +155,11 @@ public class VariableNamesTheme {
         System.out.println("уникальные строки имеются");
 
         // Блок 3. Аббревиатуры
-        String codeBlock3 = "Аббревиатуры";
-        System.out.println("""
-
-                Аббревиатуры
-                    """);
+        System.out.println("АББРЕВИАТУРЫ");
 
         // старый universally unique identifier
         String oldUuid = ("0001-0002-0003-0004-000000000005");
-        System.out.println(uuid + " = your UUID");
+        System.out.println(oldUuid + " = your UUID");
 
         // производитель оперативной памяти
         String ramManufacturer = ("Samsung");
@@ -181,12 +170,12 @@ public class VariableNamesTheme {
         System.out.println("Обьем жесткого диска:" + hddCapasity);
 
         // определение термина протокола передачи гипертекста
-        String httpDefinition = ("HTTP");
+        String httpDefinition = ("HTTP ");
         System.out.println(httpDefinition + "расшифровывается как HyperText Transfer Protocol");
 
         // сокращенный uniform resource locator
-        String abbreviatedUrlDefinition = ("url");
-        System.out.println(urlDefinition + " is unique web address for a specific resource");
+        String shortUrl = ("url");
+        System.out.println(shortUrl + " is unique web address for a specific resource");
 
         // новый идентификатор клиента
         String newId = ("didudado");

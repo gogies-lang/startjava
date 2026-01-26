@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class GuessNumber {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         Random rnd = new Random();
         int rndNum = rnd.nextInt(1,101);
-
         System.out.println("--- ИГРА: УГАДАЙ ЧИСЛО ---");
         System.out.println("Загадал число от 1 до 100. Попробуй угадать!");
 
