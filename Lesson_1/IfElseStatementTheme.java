@@ -3,9 +3,9 @@ import java.math.RoundingMode;
 
 public class IfElseStatementTheme {
     public static void main(String[] args) {
-        System.out.println("1.ПЕРЕВОД ПСЕВДОКОДА НА ЯЗЫК JAVA");
+        System.out.println("\n1.ПЕРЕВОД ПСЕВДОКОДА НА ЯЗЫК JAVA\n");
         boolean isMale = true;
-        
+
         if (!isMale) {
             System.out.println("Вы девушка.");
         } else {
@@ -18,7 +18,7 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("Вы младше 18");
         }
-        
+
         double height = 1.9;
         if (height < 1.8) {
             System.out.println("Ваш рост выше 1.8 м");
@@ -26,7 +26,7 @@ public class IfElseStatementTheme {
             System.out.println("Ваш рост ниже 1.8 м");
         }
 
-        System.out.println("2.ПОИСК БОЛЬШЕГО ЧИСЛА ШАГОВ");
+        System.out.println("\n2.ПОИСК БОЛЬШЕГО ЧИСЛА ШАГОВ\n");
 
         int todayTakenSteps = 2;
         int yesterdayTakenSteps = 21;
@@ -39,8 +39,9 @@ public class IfElseStatementTheme {
             System.out.println("Сегодня вы прошли столько же шагов как и вчера");
         }
 
-        System.out.println("3.ПРОВЕРКА КОЛИЧЕСТВА ГОСТЕЙ");
+        System.out.println("\n3.ПРОВЕРКА КОЛИЧЕСТВА ГОСТЕЙ\n");
         int guestAmount = -6;
+
         if (guestAmount == 0) { 
             System.out.println("Пока никто не записался на мероприятие!");
         } else if (guestAmount <= -1) {
@@ -50,9 +51,9 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("нечетное число гостей");
         }
-        System.out.println(" 4.ОПРЕДЕЛЕНИЕ ПЕРВОГО СИМВОЛА НИКНЕЙМА");
 
-        System.out.println("первый вариант решения задачи:");
+        System.out.println("\n 4.ОПРЕДЕЛЕНИЕ ПЕРВОГО СИМВОЛА НИКНЕЙМА\n");
+        System.out.println("первый вариант решения задачи:\n");
  
         String nickName = ("*ke4inaTori*");
         char firstChar = nickName.charAt(0);
@@ -66,7 +67,7 @@ public class IfElseStatementTheme {
             System.out.println("никнейм " + nickName + " начинается с символа " + firstChar);
         }
 
-        System.out.println("второй вариант решения задачи");
+        System.out.println("\nвторой вариант решения задачи\n");
 
         String nickName2 = ("*ke4inaTori*");
         char firstChar2 = nickName.charAt(0);
@@ -80,7 +81,7 @@ public class IfElseStatementTheme {
             System.out.println("никнейм " + nickName2 + " начинается с символа " + firstChar2);
         }
 
-        System.out.println("5.ИНВЕНТАРИЗАЦИЯ");
+        System.out.println("\n5.ИНВЕНТАРИЗАЦИЯ\n");
         int dataBaseSerialNumber = 431;
         int firstNum = (dataBaseSerialNumber / 10) % 10;
         int secondNum = dataBaseSerialNumber / 100;
@@ -101,7 +102,7 @@ public class IfElseStatementTheme {
             System.out.println("неполное совпадение: %s %s %s".formatted(temp1, temp2, temp3));
         }
 
-        System.out.println("6.ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %");
+        System.out.println("\n6.ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %\n");
         System.out.println("Вариант 1"); 
         float deposit = 321123.79f;
         float percentPlus = 0;
@@ -119,15 +120,13 @@ public class IfElseStatementTheme {
                 Начальный депозит: %f
                 сумма начисленного процента: %f
                 итоговая сумма: %f
-
-                        """.formatted(deposit, percentPlus, sumPercents));
+                """.formatted(deposit, percentPlus, sumPercents));
 
         System.out.println("Вариант 2");
 
         BigDecimal depositBd = new BigDecimal("321123.79");
         BigDecimal percentPlusBd;
         BigDecimal sumPercentsBd;
-
         BigDecimal limit100k = new BigDecimal("100000");
         BigDecimal limit300k = new BigDecimal("300000");
 
@@ -144,12 +143,13 @@ public class IfElseStatementTheme {
         sumPercentsBd = depositBd.add(percentPlusBd);
 
         System.out.println("""
+
                 Начальный депозит: %s
                 Сумма начисленного процента: %s
                 Итоговая сумма: %s
-                        """.formatted(depositBd, percentPlusBd, sumPercentsBd));
+                """.formatted(depositBd, percentPlusBd, sumPercentsBd));
 
-        System.out.println("7.ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ");
+        System.out.println("\n7.ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ\n");
 
         int historyMarkPercent = 59;
         String printHistoryMark = "";
@@ -193,10 +193,10 @@ public class IfElseStatementTheme {
                 %s
                 Средняя оценка: %f
                 Средний процент: %f
-                        """.formatted(printHistoryMark, printProgrammingMark,
-                            middleNumMark, middlePercentMark));
+                """.formatted(printHistoryMark, printProgrammingMark,
+                    middleNumMark, middlePercentMark));
 
-        System.out.println("8.РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ");
+        System.out.println("\n8.РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ\n");
         BigDecimal salesPerMonth = new BigDecimal(13025.233);
         BigDecimal rentPayment = new BigDecimal(5123.018);
         BigDecimal manufactureSelfCost = new BigDecimal(9001.729);

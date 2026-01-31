@@ -16,7 +16,7 @@ public class RpsGameFormatting {
             firstSign = scissors;
             }
 
-        System.out.println("Ход "+firstName+ ": ");
+        System.out.println("Ход "+ firstName + ": ");
         for (int i = 0; i < 5; i++) {
             System.out.print(rock + "\r");
             Thread.sleep(100);
@@ -37,7 +37,7 @@ public class RpsGameFormatting {
         } else if (secondPosidion > 33) {
             secondSign = scissors;
         }
-        System.out.println("Ход " +secondName +": ");
+        System.out.println("Ход " + secondName +": ");
         for (int i = 0; i < 5; i++) {
             System.out.print(rock + "\r");
             Thread.sleep(100);
@@ -50,7 +50,7 @@ public class RpsGameFormatting {
         System.out.println (secondSign);
 
 
-        if (firstSign.equals( secondSign )) {
+        if (firstSign.equals(secondSign)) {
             System.out.println("Победила дружба!");
             return;
         }

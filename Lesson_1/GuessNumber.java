@@ -3,14 +3,13 @@ import java.util.Scanner;
 
 public class GuessNumber {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         Random rnd = new Random();
-        int rndNum = rnd.nextInt(1,101);
-        System.out.println("--- ИГРА: УГАДАЙ ЧИСЛО ---");
+        int rndNum = rnd.nextInt(1, 101);
+        System.out.println("\n--- ИГРА: УГАДАЙ ЧИСЛО ---");
         System.out.println("Загадал число от 1 до 100. Попробуй угадать!");
 
-            while (true) {
+        while (true) {
             System.out.print("Введите ваш вариант: ");
 
             while (!scanner.hasNextInt()) {
@@ -19,7 +18,6 @@ public class GuessNumber {
             }
 
             int userNum = scanner.nextInt();
-
 
             if (userNum <= 0) {
                 System.out.println("Вы ввели число меньше 0 или 0");
@@ -30,7 +28,7 @@ public class GuessNumber {
             }
 
             if (userNum < rndNum) {
-                System.out.println("Мое число БОЛЬШЕ чем " + userNum );
+                System.out.println("Мое число БОЛЬШЕ чем " + userNum);
             } else if (userNum > rndNum) {
                 System.out.println("Мое число МЕНЬШЕ чем " + userNum);
             } else {
