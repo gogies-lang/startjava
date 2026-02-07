@@ -7,16 +7,15 @@ public class VariablesTheme {
     public static void main(String[] args) {
         final long startNano = System.nanoTime();
         final LocalTime startTime = LocalTime.now(); // 8 задание. старт замера работы кода.
-        final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
 
         System.out.println("\n1 ВЫВОД ASCII-ГРАФИКИ\n");
 
         System.out.println(String.join("\n",
-                        "                      /\\",
-                        "    J    a  v     v  /  \\",
-                        "    J   a a  v   v  /_( )\\",
-                        " J  J  aaaaa  V V  /      \\",
-                        "  JJ  a     a  V  /___/\\___\\"
+                "                      /\\",
+                "    J    a  v     v  /  \\",
+                "    J   a a  v   v  /_( )\\",
+                " J  J  aaaaa  V V  /      \\",
+                "  JJ  a     a  V  /___/\\___\\"
                 ));
 
         System.out.println("""
@@ -25,8 +24,9 @@ public class VariablesTheme {
                    J   /_( )\\  v   v  a a
                 J  J  /      \\  V V  aaaaa
                  JJ  /___/\\___\\  V  a     a 
+
                 """);
-        System.out.println("\n2. РАСЧЕТ СТОИМОСТИ ТОВАРА\n");
+        System.out.println("\n2 РАСЧЕТ СТОИМОСТИ ТОВАРА\n");
 
         float penPrice = 105.50f;
         float bookPrice = 235.23f;
@@ -40,7 +40,7 @@ public class VariablesTheme {
                 "\nсумма скидки: " + discountSum + 
                 "\nстоимость товаров со скидкой: " + discountPrice);
 
-        System.out.println("\nВАРИАНТ РЕШЕНИЯ ДВА №2\n");
+        System.out.println("\nВАРИАНТ РЕШЕНИЯ №2\n");
 
         BigDecimal penPriceBd = new BigDecimal("105.50");
         BigDecimal bookPriceBd = new BigDecimal("235.23");
@@ -55,7 +55,7 @@ public class VariablesTheme {
                 "\nсумма скидки: " + discountSumBd + 
                 "\nстоимость товаров со скидкой: " + discountPriceBd);
 
-        System.out.println("\n3. ПЕРЕСТАНОВКА ЗНАЧЕНИЙ ЯЧЕЕК В ТАБЛИЦЕ\n");
+        System.out.println("\n3. ПЕРЕСТАНОВКА ЗНАЧЕНИЙ ЯЧЕЕК В ТАБЛИЦЕ");
         int num1 = 2;
         int num2 = 5;
         System.out.println("\nI СПОСОБ ТРЕТЬЯ ПЕРЕМЕННАЯ:");
@@ -76,100 +76,92 @@ public class VariablesTheme {
 
         System.out.println("\n4. ДЕКОДИРОВАНИЕ СООБЩЕНИЯ\n");
 
-        int code1 = 1055;
-        int code2 = 1088;
-        int code3 = 1080;
-        int code4 = 1074;
-        int code5 = 1077;
-        int code6 = 1090;
-        System.out.printf("%-2d%-2d%-2d%-2d%-2d%-2d%n",
-                code1, code2, code3, code4, code5, code6);
-        System.out.printf("%-2C%-2c%-2c%-2c%-2c%-2c%n",
-                code1, code2, code3, code4, code5, code6);
+        int letterP = 1055;
+        int letterR = 1088;
+        int letterI = 1080;
+        int letterV = 1074;
+        int letterE = 1077;
+        int letterT = 1090;
+        System.out.printf("%d — %c\n", letterP, (char) letterP);
+        System.out.printf("%d — %c\n", letterR, (char) letterR);
+        System.out.printf("%d — %c\n", letterI, (char) letterI);
+        System.out.printf("%d — %c\n", letterV, (char) letterV);
+        System.out.printf("%d — %c\n", letterE, (char) letterE);
+        System.out.printf("%d — %c\n", letterT, (char) letterT);
 
         System.out.println("\n5. АНАЛИЗ КОДА ТОВАРА\n");
 
-        int uniqueThreeDigitCode = 123;
-        int goodCategory = uniqueThreeDigitCode / 100;
-        int subCategory = (uniqueThreeDigitCode / 10) % 10;
-        int packType = uniqueThreeDigitCode % 10;
+        int uniqueGoodId = 123;
+        int goodCategory = uniqueGoodId / 100;
+        int subCategory = (uniqueGoodId / 10) % 10;
+        int packType = uniqueGoodId % 10;
         int checkSum = goodCategory + subCategory + packType;
         int verificationCode = goodCategory * subCategory * packType;
-        System.out.println("Исходный код: " + uniqueThreeDigitCode);
-        System.out.println("Категория: " + goodCategory);
-        System.out.println("Подкатегория: " + subCategory);
-        System.out.println("Тип упаковки: " + packType);
-        System.out.println("Контрольная сумма: " + checkSum);
-        System.out.println("Проверочный код: " + verificationCode);
+
+        System.out.println("""
+                Исходный код: %d
+                Категория: %s
+                Подкатегория: %s
+                Тип упаковки: %s
+                Контрольная сумма: %d
+                Проверочный код: %d
+                """.formatted(uniqueGoodId, goodCategory, subCategory, 
+                packType, checkSum, verificationCode));
 
         System.out.println("\n6. ДАТЧИКИ РАКЕТЫ\n");
 
         int traveledDistance = Integer.MAX_VALUE;
-        int tdStart = traveledDistance;
-        int tdInc = ++traveledDistance;
-        int tdDec = --traveledDistance;
 
         System.out.println("""
-                пройденный путь: %d Км
+                [Пройденный путь, км]: 
+                Исходное:
                 +1: %d Км
                 -1: %d Км
-                """.formatted(tdStart, tdInc, tdDec));
+                """.formatted(traveledDistance, ++traveledDistance, --traveledDistance));
 
         byte temperature = Byte.MAX_VALUE;
-        byte tempStart = temperature;
-        byte tempInc = ++temperature;
-        byte tempDec = --temperature;
-
         System.out.println("""
-                температура: %d °C
+                [Температура, °C]
+                Исходное:
                 +1: %d °C
                 -1: %d °C
-                """.formatted(tempStart, tempInc, tempDec));
+                """.formatted(temperature, ++temperature, --temperature));
 
         short pressure = Short.MAX_VALUE;
-        short prsStart = pressure;
-        short prsInc = ++pressure; 
-        short prsDec = --pressure; 
-
         System.out.println("""
-                давление: %d b
+                [Давление, b]:
+                Исходное:
                 +1: %d b
                 -1: %d b
-                """.formatted(prsStart, prsInc, prsDec));
+                """.formatted(pressure, ++pressure, --pressure));
 
         long timeFromStart = Long.MAX_VALUE;
-        long tfsStart = timeFromStart;
-        long tfsInc = ++timeFromStart;
-        long tfsDec = --timeFromStart;
-
         System.out.println("""
-                Время с отправления: %d мс
+                [Время с отправления, мс]:
+                Исходное:
                 +1: %d мс
-                -1 (декремент): %d мс
-                """.formatted(tfsStart, tfsInc, tfsDec));
+                -1: %d мс
+                """.formatted(timeFromStart, ++timeFromStart, --timeFromStart));
 
-        char modeCode = Character.MAX_VALUE;
-        int codeStart = (int) modeCode;
-        int codeInc = (int) ++modeCode;
-        int codeDec = (int) --modeCode;
-
+        char statusCode = Character.MAX_VALUE;
         System.out.println("""
                 Код состояния: %d 
-                +1 (инкремент): %d 
-                -1 (декремент): %d 
-                """.formatted(codeStart, codeInc, codeDec));
+                +1: %d 
+                -1: %d 
+                """.formatted((int) statusCode, (int) ++statusCode, (int) --statusCode));
 
-        System.out.println("\n7. ВЫВОД ПАРАМЕТРОВ JVM И ОС\n");
+        System.out.println("7. ВЫВОД ПАРАМЕТРОВ JVM И ОС\n");
 
         Runtime rt = Runtime.getRuntime();
-        double mult = 1024.0 * 1024.0;
-        double allocatedMemory = rt.totalMemory() / mult;
-        double freeMemory = rt.freeMemory() / mult;
+        double multResult = 1024.0 * 1024.0;
+        double allocatedMemory = rt.totalMemory() / multResult;
+        double freeMemory = rt.freeMemory() / multResult;
         double usedMemory = allocatedMemory - freeMemory;
-        double maxAllocatedMemory = rt.maxMemory() / mult;
+        double maxAllocatedMemory = rt.maxMemory() / multResult;
         int cores = rt.availableProcessors();
 
         System.out.println("""
+                Характеристики JVM:
                 выделенная память - %.1f (МБ)
                 свободная память - %.1f (МБ)
                 используемая память - %.1f (Мб)
@@ -190,7 +182,8 @@ public class VariablesTheme {
                 Разделитель пути: %s
                 """.formatted(drive, osVer, javaVer, separator));
 
-        System.out.println("\n8. ЗАМЕР ВРЕМЕНИ РАБОТЫ КОДА\n");
+        System.out.println("8. ЗАМЕР ВРЕМЕНИ РАБОТЫ КОДА\n");
+        final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
         long finishNano = System.nanoTime();
         LocalTime finishTime = LocalTime.now();
         double timeElapsed = (finishNano - startNano) / 1e9;
