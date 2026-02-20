@@ -30,7 +30,6 @@ public class IfElseStatementTheme {
 
         int todaySteps = 2500;
         int yesterdaySteps = 3000;
-        double averageSteps = (todaySteps + yesterdaySteps) / 2.0;
         String result = "";
 
         if (todaySteps > yesterdaySteps) {
@@ -41,11 +40,13 @@ public class IfElseStatementTheme {
             result = "Сегодня вы прошли столько же, сколько вчера";
         }
 
+        double averageSteps = (todaySteps + yesterdaySteps) / 2.0;
+
         System.out.println("""
                 Шаги за сегодня: %d
                 Шаги за вчера:   %d
                 ---------------------------
-                Сравнение количества шагов: %s
+                %s
                 Среднее за 2 дня: %.2f
                 """.formatted(todaySteps, yesterdaySteps, result, averageSteps));
 
@@ -63,9 +64,9 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n4.ОПРЕДЕЛЕНИЕ ПЕРВОГО СИМВОЛА НИКНЕЙМА");
-        System.out.println("\nпервый вариант решения задачи:");
+        System.out.println("ВАРИАНТ 1");
 
-        String nickName = ("*ke4inaTori*");
+        String nickName = "*ke4inaTori*";
         char firstChar = nickName.charAt(0);
         if (firstChar >= 'a' && firstChar <= 'z') {
             System.out.println(nickName + " начинается с маленькой буквы " + firstChar);
@@ -77,18 +78,16 @@ public class IfElseStatementTheme {
             System.out.println(nickName + " начинается с символа " + firstChar);
         }
 
-        System.out.println("\nвторой вариант решения задачи");
+        System.out.println("ВАРИАНТ 2");
 
-        String nickName2 = ("*ke4inaTori*");
-        char firstChar2 = nickName.charAt(0);
-        if (Character.isLowerCase(firstChar2)) {
-            System.out.println("никнейм " + nickName2 + " начинается с маленькой буквы " + firstChar2);
-        } else if (Character.isUpperCase(firstChar2)) {
-            System.out.println("никнейм " + nickName2 + " начинается с большой буквы " + firstChar2);
-        } else if (Character.isDigit(firstChar2)) {
-            System.out.println("никнейм " + nickName2 + " начинается с цифры " + firstChar2);
+        if (Character.isLowerCase(firstChar)) {
+            System.out.println(nickName + " начинается с маленькой буквы " + firstChar);
+        } else if (Character.isUpperCase(firstChar)) {
+            System.out.println(nickName + " начинается с большой буквы " + firstChar);
+        } else if (Character.isDigit(firstChar)) {
+            System.out.println(nickName + " начинается с цифры " + firstChar);
         } else {
-            System.out.println("никнейм " + nickName2 + " начинается с символа " + firstChar2);
+            System.out.println(nickName + " начинается с символа " + firstChar);
         }
 
         System.out.println("\n5. ИНВЕНТАРИЗАЦИЯ");
@@ -115,15 +114,16 @@ public class IfElseStatementTheme {
                 System.out.println("Оборудование не идентифицировано");
             } else {
                 System.out.println("""
-                        Выявлено неполное совпадение серийных номеров:%s%s%s
-                        """.formatted(resHundreds, resTens, resOnes));
+                        Нет полного совпадения:
+                        База данных:[%s]
+                        Фактический:[%s%s%s]
+                        """.formatted(dbSerialNumber, resHundreds, resTens, resOnes));
             }
         }
 
         System.out.println("\n6.ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %");
-        System.out.println("\nВариант 1"); 
+        System.out.println("ВАРИАНТ 1"); 
         float deposit = 321123.79f;
-
         float interestRate = 0.10f;
         if (deposit < 100000f) {
             interestRate = 0.05f;
@@ -134,23 +134,19 @@ public class IfElseStatementTheme {
         float accruedInterest = deposit * interestRate;
         float totalAmount = deposit + accruedInterest;
 
-        System.out.println("""
+        System.out.print("""
                 Начальный депозит: %.2f
                 Сумма начисленного процента: %.2f
                 Итоговая сумма: %.2f
                 """.formatted(deposit, accruedInterest, totalAmount));
 
-        System.out.println("Вариант 2");
-
+        System.out.println("ВАРИАНТ 2");
         BigDecimal depositBd = new BigDecimal("321123.79");
-
-        BigDecimal interestRateBd;
+        BigDecimal interestRateBd = new BigDecimal("0.10");
         if (depositBd.compareTo(new BigDecimal("100000")) < 0) {
             interestRateBd = new BigDecimal("0.05");
         } else if (depositBd.compareTo(new BigDecimal("300000")) <= 0) {
             interestRateBd = new BigDecimal("0.07");
-        } else {
-            interestRateBd = new BigDecimal("0.10");
         }
 
         BigDecimal accruedInterestBd = depositBd.multiply(interestRateBd).setScale(2, RoundingMode.HALF_UP);
@@ -196,15 +192,15 @@ public class IfElseStatementTheme {
                 """.formatted(historyMark, programmingMark, averageMark, averagePercent));
 
         System.out.println("8.РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ");
-        BigDecimal salesPerMonth = new BigDecimal(13025.233);
-        BigDecimal rentPayment = new BigDecimal(5123.018);
-        BigDecimal manufactureSelfCost = new BigDecimal(9001.729);
+        BigDecimal salesPerMonth = new BigDecimal("13025.233");
+        BigDecimal rentPayment = new BigDecimal("5123.018");
+        BigDecimal manufactureSelfCost = new BigDecimal("9001.729");
         BigDecimal profitPerYear = salesPerMonth
                 .subtract(manufactureSelfCost)
                 .subtract(rentPayment)
-                .multiply(new BigDecimal(12));
+                .multiply(new BigDecimal("12"));
         profitPerYear = profitPerYear.setScale(2, RoundingMode.HALF_UP);
-        char plusMinusSign = (profitPerYear.compareTo(BigDecimal.ZERO) >= 0) ? '+' : '-';
-        System.out.println("прибыль за год: %s".formatted(profitPerYear));
+        char plusSign = (profitPerYear.signum() == 1) ? '+' : ' ';
+        System.out.println("прибыль за год: %c%s".formatted(plusSign, profitPerYear));
     }
 }

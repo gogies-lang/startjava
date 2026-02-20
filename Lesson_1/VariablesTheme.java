@@ -26,8 +26,9 @@ public class VariablesTheme {
                  JJ  /___/\\___\\  V  a     a 
 
                 """);
-        System.out.println("\n2 РАСЧЕТ СТОИМОСТИ ТОВАРА\n");
 
+        System.out.println("\n2 РАСЧЕТ СТОИМОСТИ ТОВАРА");
+        System.out.println("1 ВАРИАНТ");
         float penPrice = 105.50f;
         float bookPrice = 235.23f;
         float discountPercent = 0.11f;
@@ -40,7 +41,7 @@ public class VariablesTheme {
                 "\nсумма скидки: " + discountSum + 
                 "\nстоимость товаров со скидкой: " + discountPrice);
 
-        System.out.println("\nВАРИАНТ РЕШЕНИЯ №2\n");
+        System.out.println("2 ВАРИАНТ");
 
         BigDecimal penPriceBd = new BigDecimal("105.50");
         BigDecimal bookPriceBd = new BigDecimal("235.23");
@@ -58,17 +59,17 @@ public class VariablesTheme {
         System.out.println("\n3. ПЕРЕСТАНОВКА ЗНАЧЕНИЙ ЯЧЕЕК В ТАБЛИЦЕ");
         int num1 = 2;
         int num2 = 5;
-        System.out.println("\nI СПОСОБ ТРЕТЬЯ ПЕРЕМЕННАЯ:");
+        System.out.println("\n1 СПОСОБ ТРЕТЬЯ ПЕРЕМЕННАЯ:");
         int swap = num1;
         num1 = num2;
         num2 = swap;
         System.out.println("Новые значения: num1 = " + num1 + ", num2 = " + num2);
-        System.out.println("\nII СПОСОБ ЧЕРЕЗ АРИФМЕТИКУ (СУММА И ВЫЧИТАНИЕ):");
+        System.out.println("\n2 СПОСОБ ЧЕРЕЗ АРИФМЕТИКУ (СУММА И ВЫЧИТАНИЕ):");
         num1 += num2;
         num2 = num1 - num2; 
         num1 -= num2;
         System.out.println("Новые значения: num1 = " + num1 + ", num2 = " + num2);
-        System.out.println("\nIII СПОСОБ ПОБИТОВАЯ ОПЕРАЦИЯ");
+        System.out.println("\n3 СПОСОБ ПОБИТОВАЯ ОПЕРАЦИЯ");
         num1 ^= num2;
         num2 ^= num1;
         num1 ^= num2;
@@ -82,12 +83,12 @@ public class VariablesTheme {
         int letterV = 1074;
         int letterE = 1077;
         int letterT = 1090;
-        System.out.printf("%d — %c\n", letterP, (char) letterP);
-        System.out.printf("%d — %c\n", letterR, (char) letterR);
-        System.out.printf("%d — %c\n", letterI, (char) letterI);
-        System.out.printf("%d — %c\n", letterV, (char) letterV);
-        System.out.printf("%d — %c\n", letterE, (char) letterE);
-        System.out.printf("%d — %c\n", letterT, (char) letterT);
+        System.out.printf("%d — %n", letterP);
+        System.out.printf("%d — %n", letterR);
+        System.out.printf("%d — %n", letterI);
+        System.out.printf("%d — %n", letterV);
+        System.out.printf("%d — %n", letterE);
+        System.out.printf("%d — %n", letterT);
 
         System.out.println("\n5. АНАЛИЗ КОДА ТОВАРА\n");
 

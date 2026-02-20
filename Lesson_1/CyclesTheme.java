@@ -5,25 +5,20 @@ public class CyclesTheme {
         System.out.println("\n1 ВЫВОД ASCII-СИМВОЛОВ\n");
         System.out.printf("%-10s %-10s %-20s%n", "DECIMAL", "CHARACTER", "DESCRIPTION");
 
-        for (int oddNum = 33; oddNum <= 47; oddNum++) {
-            if (oddNum % 2 != 0) {
-                System.out.printf("%3d         %-11c %s%n", oddNum, (char) oddNum, Character.getName(oddNum));
+        for (int symbolCode = 33; symbolCode <= 'z'; symbolCode++) {
+            if ((symbolCode <= 47 && symbolCode % 2 != 0) || (symbolCode >= 'a' && symbolCode % 2 == 0)) {
+                System.out.printf("%03d        %-11c%s%n", symbolCode, symbolCode,
+                    Character.getName(symbolCode));
+                }
+            if (symbolCode == 47) {
+                    symbolCode = 'a' - 1;
             }
         }
-
-        for (char lowCaseLetter = 'a'; lowCaseLetter <= 'z'; lowCaseLetter++) {
-            if (lowCaseLetter % 2 == 0) {
-                System.out.printf("%3d         %-11c %s%n",
-                        (int) lowCaseLetter, (char) lowCaseLetter, Character.getName(lowCaseLetter));
-            }
-        }
-
         System.out.println("\n2 ВЫВОД ГЕОМЕТРИЧЕСКИХ ФИГУР\n");
 
+        String rectRow = "----------";
         for (int i = 1; i <= 5; i++) {
-            for (int j = 0; j < 10; j++) {
-                System.out.print("-");
-            }
+            System.out.print(rectRow);
 
             System.out.print(" ");
             for (int j = 0; j < (6 - i); j++) {
@@ -37,20 +32,15 @@ public class CyclesTheme {
 
             System.out.println();
         }
+
         System.out.println("\n3 ВЫВОД ТАБЛИЦЫ УМНОЖЕНИЯ\n");
-        System.out.print("   |");
-
-        for (int raws = 2; raws <= 9; raws++) {
-            System.out.printf("%3d", raws);
-        }
-
-        System.out.println();
+        System.out.println("   |  2  3  4  5  6  7  8  9");
         System.out.println("---+------------------------");
-        
+
         for (int lines = 2; lines <= 9; lines++) {
             System.out.printf("%2d |", lines);
-            for (int raws = 2; raws <= 9; raws++) {
-                System.out.printf("%3d", raws * lines);
+            for (int rows = 2; rows <= 9; rows++) {
+                System.out.printf("%3d", rows * lines);
             }
 
             System.out.println();
@@ -168,5 +158,5 @@ public class CyclesTheme {
 
         System.out.println("Пароль: " + password);
         System.out.println("Надежность: " + reliability);
+        }
     }
-}
