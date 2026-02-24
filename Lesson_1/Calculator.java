@@ -40,10 +40,13 @@ public class Calculator {
         System.out.println("Введите символ математической операции + , - , *, /, %, ^,");
         char action = scanner.next().charAt(0);;
 
-        while (action != '+' && action != '-' &&
-            action != '*' && action != '/' && action != '%' && action != '^') {
+        boolean isInvalidOperator = action != '+' && action != '-' &&
+                    action != '*' && action != '/' && action != '%' && action != '^';
+        while (isInvalidOperator) {
             System.out.println("Ошибка! Введите один из предложенных знаков + , - , *, /, %, ^,");
             action = scanner.next().charAt(0);
+            isInvalidOperator = action != '+' && action != '-' &&
+                        action != '*' && action != '/' && action != '%' && action != '^';
         }
         int result = 0;
 
