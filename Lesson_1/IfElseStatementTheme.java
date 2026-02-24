@@ -50,7 +50,7 @@ public class IfElseStatementTheme {
                 Среднее за 2 дня: %.2f
                 """.formatted(todaySteps, yesterdaySteps, result, averageSteps));
 
-        System.out.println("\n3.ПРОВЕРКА КОЛИЧЕСТВА ГОСТЕЙ");
+        System.out.println("3.ПРОВЕРКА КОЛИЧЕСТВА ГОСТЕЙ");
         int guestAmount = -6;
 
         if (guestAmount == 0) { 
@@ -68,29 +68,30 @@ public class IfElseStatementTheme {
 
         String nickName = "*ke4inaTori*";
         char firstChar = nickName.charAt(0);
+        System.out.print(nickName + " начинается с ");
         if (firstChar >= 'a' && firstChar <= 'z') {
-            System.out.println(nickName + " начинается с маленькой буквы " + firstChar);
+            System.out.print("маленькой буквы " + firstChar);
         } else if (firstChar >= 'A' && firstChar <= 'Z') {
-            System.out.println(nickName + " начинается с большой буквы " + firstChar);
+            System.out.print("большой буквы " + firstChar);
         } else if (firstChar >= '0' && firstChar <= '9') {
-            System.out.println(nickName + " начинается с цифры " + firstChar);
+            System.out.print("цифры " + firstChar);
         } else {
-            System.out.println(nickName + " начинается с символа " + firstChar);
+            System.out.print("символа " + firstChar);
         }
 
-        System.out.println("ВАРИАНТ 2");
-
+        System.out.println("\nВАРИАНТ 2");
+        System.out.print(nickName + " начинается c ");
         if (Character.isLowerCase(firstChar)) {
-            System.out.println(nickName + " начинается с маленькой буквы " + firstChar);
+            System.out.print("маленькой буквы " + firstChar);
         } else if (Character.isUpperCase(firstChar)) {
-            System.out.println(nickName + " начинается с большой буквы " + firstChar);
+            System.out.print("большой буквы " + firstChar);
         } else if (Character.isDigit(firstChar)) {
-            System.out.println(nickName + " начинается с цифры " + firstChar);
+            System.out.print("начинается с цифры " + firstChar);
         } else {
-            System.out.println(nickName + " начинается с символа " + firstChar);
+            System.out.print("символа " + firstChar);
         }
 
-        System.out.println("\n5. ИНВЕНТАРИЗАЦИЯ");
+        System.out.println("\n\n5. ИНВЕНТАРИЗАЦИЯ");
 
         int dbSerialNumber = 461;
         int officeSerialNumber = 567;
@@ -121,7 +122,7 @@ public class IfElseStatementTheme {
             }
         }
 
-        System.out.println("\n6.ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %");
+        System.out.println("6.ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %");
         System.out.println("ВАРИАНТ 1"); 
         float deposit = 321123.79f;
         float interestRate = 0.10f;
@@ -158,7 +159,7 @@ public class IfElseStatementTheme {
                 Итоговая сумма: %s
                 """.formatted(depositBd, accruedInterestBd, totalBalanceBd));
 
-        System.out.println("\n7. ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ");
+        System.out.println("7. ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ");
         int historyPercent = 59;
         int historyMark = 5;
 
@@ -201,6 +202,6 @@ public class IfElseStatementTheme {
                 .multiply(new BigDecimal("12"));
         profitPerYear = profitPerYear.setScale(2, RoundingMode.HALF_UP);
         char plusSign = (profitPerYear.signum() == 1) ? '+' : ' ';
-        System.out.println("прибыль за год: %c%s".formatted(plusSign, profitPerYear));
+        System.out.println("прибыль за год:%c%s".formatted(plusSign, profitPerYear));
     }
 }

@@ -37,17 +37,14 @@ public class Calculator {
                 System.out.println("Ошибка! Число должно быть больше 0. Повторите ввод:");
             }
         }
-        System.out.println("Вы успешно ввели числа: " + num1 + " и " + num2);
         System.out.println("Введите символ математической операции + , - , *, /, %, ^,");
         char action = scanner.next().charAt(0);;
 
         while (action != '+' && action != '-' &&
             action != '*' && action != '/' && action != '%' && action != '^') {
             System.out.println("Ошибка! Введите один из предложенных знаков + , - , *, /, %, ^,");
-            action = scanner.next().charAt(0);;
+            action = scanner.next().charAt(0);
         }
-
-        System.out.println("Вы успешно выбрали знак " + action);
         int result = 0;
 
         if (action == '+') {
@@ -76,6 +73,6 @@ public class Calculator {
                 result *= num1;
             }
         }
-        System.out.println("Ваше вычисление: " + num1 + " " + action + " " + num2 + " = " + result);
+        System.out.println("Ваше вычисление:" + num1 + " " + action + " " + num2 + " = " + result);
     }
 }

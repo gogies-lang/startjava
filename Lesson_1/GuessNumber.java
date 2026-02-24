@@ -17,20 +17,20 @@ public class GuessNumber {
                 scanner.next(); 
             }
 
-            int userNum = scanner.nextInt();
+            int playerNum = scanner.nextInt();
 
-            if (userNum <= 0) {
+            if (playerNum <= 0) {
                 System.out.println("Вы ввели число меньше 0 или 0");
                 continue;
-            } else if (userNum > 100) {
+            } else if (playerNum > 100) {
                 System.out.println("вы ввели число больше 100");
                 continue;
             }
 
-            if (userNum < rndNum) {
-                System.out.println("Мое число БОЛЬШЕ чем " + userNum);
-            } else if (userNum > rndNum) {
-                System.out.println("Мое число МЕНЬШЕ чем " + userNum);
+            if (playerNum < rndNum) {
+                System.out.println("Мое число БОЛЬШЕ чем " + playerNum);
+            } else if (playerNum > rndNum) {
+                System.out.println("Мое число МЕНЬШЕ чем " + playerNum);
             } else {
                 System.out.println("ПОЗДРАВЛЯЮ! Ты угадал число " + rndNum);
                 break;

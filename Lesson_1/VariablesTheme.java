@@ -77,18 +77,21 @@ public class VariablesTheme {
 
         System.out.println("\n4. ДЕКОДИРОВАНИЕ СООБЩЕНИЯ\n");
 
+        System.out.println("\n4. ДЕКОДИРОВАНИЕ СООБЩЕНИЯ\n");
+
         int letterP = 1055;
         int letterR = 1088;
         int letterI = 1080;
         int letterV = 1074;
         int letterE = 1077;
         int letterT = 1090;
-        System.out.printf("%d — %n", letterP);
-        System.out.printf("%d — %n", letterR);
-        System.out.printf("%d — %n", letterI);
-        System.out.printf("%d — %n", letterV);
-        System.out.printf("%d — %n", letterE);
-        System.out.printf("%d — %n", letterT);
+
+        System.out.printf("%d — %c%n", letterP, letterP);
+        System.out.printf("%d — %c%n", letterR, letterR);
+        System.out.printf("%d — %c%n", letterI, letterI);
+        System.out.printf("%d — %c%n", letterV, letterV);
+        System.out.printf("%d — %c%n", letterE, letterE);
+        System.out.printf("%d — %c%n", letterT, letterT);
 
         System.out.println("\n5. АНАЛИЗ КОДА ТОВАРА\n");
 
@@ -154,11 +157,11 @@ public class VariablesTheme {
         System.out.println("7. ВЫВОД ПАРАМЕТРОВ JVM И ОС\n");
 
         Runtime rt = Runtime.getRuntime();
-        double multResult = 1024.0 * 1024.0;
-        double allocatedMemory = rt.totalMemory() / multResult;
-        double freeMemory = rt.freeMemory() / multResult;
+        double bytesInMegabyte = 1024.0 * 1024.0;
+        double allocatedMemory = rt.totalMemory() / bytesInMegabyte;
+        double freeMemory = rt.freeMemory() / bytesInMegabyte;
         double usedMemory = allocatedMemory - freeMemory;
-        double maxAllocatedMemory = rt.maxMemory() / multResult;
+        double maxAllocatedMemory = rt.maxMemory() / bytesInMegabyte;
         int cores = rt.availableProcessors();
 
         System.out.println("""

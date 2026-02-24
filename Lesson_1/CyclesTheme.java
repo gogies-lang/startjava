@@ -3,18 +3,16 @@ import java.util.Random;
 public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("\n1 ВЫВОД ASCII-СИМВОЛОВ\n");
-        System.out.printf("%-10s %-10s %-20s%n", "DECIMAL", "CHARACTER", "DESCRIPTION");
+        System.out.printf("%s%12s%14s", "DECIMAL", "CHARACTER", "DESCRIPTION");
 
-        for (int symbolCode = 33; symbolCode <= 'z'; symbolCode++) {
-            if ((symbolCode <= 47 && symbolCode % 2 != 0) || (symbolCode >= 'a' && symbolCode % 2 == 0)) {
-                System.out.printf("%03d        %-11c%s%n", symbolCode, symbolCode,
+        for (int symbolCode = 33; symbolCode <= 122; symbolCode += 2) {
+            System.out.printf("%n%4d%11c%7s%-1s", symbolCode, symbolCode, "",
                     Character.getName(symbolCode));
-                }
             if (symbolCode == 47) {
-                    symbolCode = 'a' - 1;
+                symbolCode = 96;
             }
         }
-        System.out.println("\n2 ВЫВОД ГЕОМЕТРИЧЕСКИХ ФИГУР\n");
+        System.out.println("\n\n2 ВЫВОД ГЕОМЕТРИЧЕСКИХ ФИГУР\n");
 
         String rectRow = "----------";
         for (int i = 1; i <= 5; i++) {
@@ -34,13 +32,14 @@ public class CyclesTheme {
         }
 
         System.out.println("\n3 ВЫВОД ТАБЛИЦЫ УМНОЖЕНИЯ\n");
-        System.out.println("   |  2  3  4  5  6  7  8  9");
-        System.out.println("---+------------------------");
+        System.out.println("""
+                   |  2  3  4  5  6  7  8  9
+                ---+------------------------""");
 
-        for (int lines = 2; lines <= 9; lines++) {
-            System.out.printf("%2d |", lines);
-            for (int rows = 2; rows <= 9; rows++) {
-                System.out.printf("%3d", rows * lines);
+        for (int row = 2; row <= 9; row++) {
+            System.out.printf("%2d |", row);
+            for (int col = 2; col <= 9; col++) {
+                System.out.printf("%3d", col * row);
             }
 
             System.out.println();
@@ -58,11 +57,12 @@ public class CyclesTheme {
             }
         }
         if (count > 0) {
-            for (int j = 0; j < (5 - count); j++) {
+            for (int i = 0; i < (5 - count); i++) {
                 System.out.printf("%3d", 0);
             }
             System.out.println();
         }
+
         System.out.println("\n5 ВЫВОД ЧИСЕЛ МЕЖДУ MIN & MAX\n");
 
         int a = 10;
@@ -75,41 +75,43 @@ public class CyclesTheme {
         if (c > max) max = c;
         if (b < min) min = b;
         if (c < min) min = c;
-        System.out.println("Интервал (" + min + ", " + max + ") в порядке убывания:");
+        System.out.print("Интервал (" + min + ", " + max + ") в порядке убывания: ");
 
         for (int i = max - 1; i > min; i--) {
             System.out.print(i + " ");
         }
 
+        System.out.println("\n\n6 РАЗНЫЕ ОПЕРАЦИИ НАД ЧИСЛОМ");
+
         System.out.println();
         int srcNum = 2234321;
-        int tempNum = srcNum;
-        int reverseNum = 0;
+        int currNum = srcNum;
+        int reversedNum = 0;
         int twosCount = 0;
 
-        while (tempNum > 0) {
-            int digit = tempNum % 10;
+        while (currNum > 0) {
+            int digit = currNum % 10;
             if (digit == 2) twosCount++;
-            reverseNum = reverseNum * 10 + digit;
-            tempNum /= 10;
+            reversedNum = reversedNum * 10 + digit;
+            currNum /= 10;
         }
 
-        String palindromeStatus = (srcNum == reverseNum) ? "палиндром" : "не палиндром";
+        String palindromeStatus = (srcNum == reversedNum) ? "палиндром" : "не палиндром";
         String twosParity = (twosCount % 2 == 0) ? "четным" : "нечетным";
 
         System.out.printf("%d - %s с %s (%d) количеством двоек%n", 
                 srcNum, palindromeStatus, twosParity, twosCount);
 
-        System.out.println("\n6 ПРОВЕРКА СЧАСТЛИВОГО ЧИСЛА 101002\n");
+        System.out.println("\n7 ПРОВЕРКА СЧАСТЛИВОГО ЧИСЛА\n");
 
         int luckyNum = 101002;
-        int rightPart = luckyNum % 1000;
-        int leftPart = luckyNum / 1000;
+        int rightHalf = luckyNum % 1000;
+        int leftHalf = luckyNum / 1000;
 
         int sumLeft = 0;
         int sumRight = 0;
-        int tempLeft = leftPart;
-        int tempRight = rightPart;
+        int tempLeft = leftHalf;
+        int tempRight = rightHalf;
 
         for (int i = 0; i < 3; i++) {
             sumLeft += tempLeft % 10;
@@ -118,12 +120,12 @@ public class CyclesTheme {
             tempRight /= 10;
         }
 
-        String result = (sumLeft == sumRight) ? "счастливое число" : "несчастливое число";
-        System.out.printf("%d - %s%n", luckyNum, result);
-        System.out.printf("Сумма цифр %03d = %d%n", leftPart, sumLeft);
-        System.out.printf("Сумма цифр %03d = %d%n", rightPart, sumRight);
+        String luckiness = (sumLeft == sumRight) ? "счастливое число" : "несчастливое число";
+        System.out.printf("%d - %s%n", luckyNum, luckiness);
+        System.out.printf("Сумма цифр %03d = %d%n", leftHalf, sumLeft);
+        System.out.printf("Сумма цифр %03d = %d%n", rightHalf, sumRight);
 
-        System.out.println("\n7 ПРОСТОЙ ГЕНЕРАТОР ПАРОЛЯ\n");
+        System.out.println("\n8 ПРОСТОЙ ГЕНЕРАТОР ПАРОЛЯ\n");
 
         Random rnd = new Random();
         String password = "";
@@ -158,5 +160,5 @@ public class CyclesTheme {
 
         System.out.println("Пароль: " + password);
         System.out.println("Надежность: " + reliability);
-        }
     }
+}
