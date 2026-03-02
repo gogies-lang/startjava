@@ -9,7 +9,8 @@ public class WolfTest {
                 Возраст: %d лет
                 Вес: %.1f кг
                 Окрас: %s
-                """.formatted(wolf.gender, wolf.name, wolf.age, wolf.weight, wolf.color));
+                """.formatted(wolf.getGender(), wolf.getName(), wolf.getAge(),
+                        wolf.getWeight(), wolf.getColor()));
 
         System.out.println("Действия волка:");
         wolf.walk();

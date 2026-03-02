@@ -1,9 +1,9 @@
 public class Wolf {
-    private String gender;
-    private String name;
-    private double weight;
-    private int age;
-    private String color;
+    private String gender = "male";
+    private String name = "Grog";
+    private double weight = 59.2;
+    private int age = 4;
+    private String color = "blue dark";
 
     public String getGender() {
         return gender;
@@ -34,7 +34,7 @@ public class Wolf {
     }
 
     public void setAge(int age) {
-        if (setAge = 0)this.age = age;
+        if (age >= 0)this.age = age;
     }
 
     public String getColor() {
