@@ -1,5 +1,4 @@
 public class Person {
-
     String sex = "male";
     String name = "Igor";
     double weight = 105.5;
